@@ -16,10 +16,12 @@ app.config['SESSION_TYPE'] = 'filesystem'
 app.secret_key = 'exam_seating_secret_2024'
 
 DB_CONFIG = {
-    'host': 'mysql.railway.internal',
+    'host': 'kodama.proxy.rlwy.net',
     'user': 'root',
     'password': 'oIhaDisJlGDttfyDDBooNIOLLYZYYECd',
-    'database': 'railway'
+    'database': 'railway',
+    'port': 12086
+
 }
 
 def get_db():
