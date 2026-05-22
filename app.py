@@ -16,10 +16,10 @@ app.config['SESSION_TYPE'] = 'filesystem'
 app.secret_key = 'exam_seating_secret_2024'
 
 DB_CONFIG = {
-    'host': 'localhost',
+    'host': 'mysql.railway.internal',
     'user': 'root',
-    'password': '',
-    'database': 'exam_seating'
+    'password': 'oIhaDisJlGDttfyDDBooNIOLLYZYYECd',
+    'database': 'railway'
 }
 
 def get_db():
@@ -33,6 +33,10 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated
 
+import os
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 # ─── AUTH ───────────────────────────────────────────────────────────────────
 
 @app.route('/')
